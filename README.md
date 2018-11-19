@@ -1,4 +1,4 @@
-# MicroserviceHttpEndpointElixir
+# ErllambdaElixirExample
 
 Demonstrates a simple HTTP endpoint using API Gateway. You have full
 access to the request and response payload, including headers and
@@ -12,8 +12,8 @@ passing in the query parameters as input for DynamoDB API.
 
 ### Clone repository
 
-    git clone git@github.com/alertlogic/microservice_http_endpoint_elixir
-    cd microservice_http_endpoint_elixir
+    git clone git@github.com/alertlogic/erllambda_elixir_example
+    cd erllambda_elixir_example
 
 ### Create package
 
@@ -29,30 +29,31 @@ If images are not yet available publicly in docker hub, they can be easily built
 
 To create a zip package fetch all dependencies into the current directory and run erllambda release mix task in docker container:
 
+    mix deps.get
     docker run -it --rm -v `pwd`:/buildroot -w /buildroot -e MIX_ENV=prod erllambda:20.3-elixir mix erllambda.release
 
-This should create `microservice_http_endpoint_elixir.zip` package in release directory:
+This should create `erllambda_elixir_example.zip` package in release directory:
 
-    _build/prod/rel/microservice_http_endpoint_elixir/releases/0.1.0/microservice_http_endpoint_elixir.zip
+    _build/prod/rel/erllambda_elixir_example/releases/0.1.0/erllambda_elixir_example.zip
 
 ### Deploy AWS stack
 
 #### Create bucket
 
-    aws s3api create-bucket --bucket my-microservice-http-endpoint-elixir-stack
+    aws s3api create-bucket --bucket erllambda-elixir-example
 
 #### Package artifacts
 
     aws cloudformation package \
-        --template-file tempalte.yaml \
+        --template-file etc/template.yaml \
         --output-template-file packaged.yaml \
-        --s3-bucket my-microservice-http-endpoint-elixir-stack
+        --s3-bucket erllambda-elixir-example
 
 #### Deploy stack
 
     aws cloudformation deploy --capabilities CAPABILITY_IAM \
         --template-file packaged.yaml \
-        --stack-name my-microservice-http-endpoint-elixir-stack
+        --stack-name erllambda-elixir-example
 
 
 #### Call lambda
@@ -60,7 +61,7 @@ This should create `microservice_http_endpoint_elixir.zip` package in release di
 Once stack is successfully deployed it creates a publicly available API Gateway endpoint. To retrieve created endpoint value, describe stack and get the output value of the `ApiURL` endpoint:
 
     aws cloudformation describe-stacks \
-        --stack-name my-microservice-http-endpoint-elixir-stack \
+        --stack-name erllambda-elixir-example \
             | jq -r .Stacks[].Outputs[].OutputValue
 
 This should return URL similar to `https://fkwbu2l29x2.execute-api.us-east-1.amazonaws.com/Prod/MyResource/`

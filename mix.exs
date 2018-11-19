@@ -1,9 +1,9 @@
-defmodule MicroserviceHttpEndpointElixir.MixProject do
+defmodule ErllambdaElixirExample.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :microservice_http_endpoint_elixir,
+      app: :erllambda_elixir_example,
       version: "0.1.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
