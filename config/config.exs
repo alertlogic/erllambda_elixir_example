@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :microservice_http_endpoint_elixir, key: :value
+#     config :erllambda_elixir_example, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:microservice_http_endpoint_elixir, :key)
+#     Application.get_env(:erllambda_elixir_example, :key)
 #
 # You can also configure a 3rd-party app:
 #

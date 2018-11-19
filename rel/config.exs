@@ -46,8 +46,8 @@ end
 # when running `mix release`, the first release in the file
 # will be used by default
 
-release :microservice_http_endpoint_elixir do
-  set version: current_version(:microservice_http_endpoint_elixir)
+release :erllambda_elixir_example do
+  set version: current_version(:erllambda_elixir_example)
   set applications: [
     :runtime_tools
   ]

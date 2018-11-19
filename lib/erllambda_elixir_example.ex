@@ -1,4 +1,4 @@
-defmodule MicroserviceHttpEndpointElixir do
+defmodule ErllambdaElixirExample do
   @moduledoc """
   Demonstrates a simple HTTP endpoint using API Gateway. You have full
   access to the request and response payload, including headers and
