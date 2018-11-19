@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >-
+  A simple backend (read/write to DynamoDB) with a RESTful API endpoint using Amazon API Gateway.
+
+Globals:
+  #https://github.com/awslabs/serverless-application-model/blob/develop/docs/globals.rst
+  Function:
+    Runtime: provided
+    MemorySize: 512
+    Environment:
+      Variables:
+        TABLE_NAME:
+          Ref: Table
+
+Resources:
+  microservicehttpendpointelixir:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: 'Elixir.MicroserviceHttpEndpointElixir'
+      CodeUri: _build/prod/rel/microservice_http_endpoint_elixir/releases/0.1.0/microservice_http_endpoint_elixir.zip
+      Description: >-
+        A simple backend (read/write to DynamoDB) with a RESTful API endpoint using Amazon API Gateway.
+      Timeout: 10
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref Table
+      Events:
+        CRUD:
+          Type: Api
+          Properties:
+            Path: /MyResource
+            Method: ANY
+
+  Table:
+    Type: AWS::Serverless::SimpleTable
+
+
+
+Outputs:
+  ApiURL:
+    Description: "API endpoint URL for Prod environment"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/MyResource/"
