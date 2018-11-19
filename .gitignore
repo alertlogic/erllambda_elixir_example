@@ -20,5 +20,7 @@ erl_crash.dump
 *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-microservice_http_endpoint_elixir-*.tar
+erllambda_elixir_example-*.tar
 
+# Ignore packaged template
+packaged.yaml

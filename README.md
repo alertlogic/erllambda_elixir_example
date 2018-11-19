@@ -45,7 +45,7 @@ This should create `erllambda_elixir_example.zip` package in release directory:
 #### Package artifacts
 
     aws cloudformation package \
-        --template-file tempalte.yaml \
+        --template-file etc/template.yaml \
         --output-template-file packaged.yaml \
         --s3-bucket erllambda-elixir-example
 
