@@ -14,7 +14,7 @@ Globals:
           Ref: Table
 
 Resources:
-  microservicehttpendpointelixir:
+  erllambdaElixirExample:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: 'Elixir.ErllambdaElixirExample'
