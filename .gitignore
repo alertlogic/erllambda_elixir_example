@@ -24,3 +24,4 @@ erllambda_elixir_example-*.tar
 
 # Ignore packaged template
 packaged.yaml
+*.iml
