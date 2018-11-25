@@ -18,7 +18,7 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: 'Elixir.ErllambdaElixirExample'
-      CodeUri: _build/prod/rel/erllambda_elixir_example/releases/0.1.0/erllambda_elixir_example.zip
+      CodeUri: ../_build/prod/rel/erllambda_elixir_example/releases/0.1.0/erllambda_elixir_example.zip
       Description: >-
         A simple backend (read/write to DynamoDB) with a RESTful API endpoint using Amazon API Gateway.
       Timeout: 10
