@@ -12,7 +12,7 @@ passing in the query parameters as input for DynamoDB API.
 
 ### Clone repository
 
-    git clone git@github.com/alertlogic/erllambda_elixir_example
+    git clone https://github.com/alertlogic/erllambda_elixir_example.git
     cd erllambda_elixir_example
 
 ### Create package
@@ -23,7 +23,7 @@ One of the options is to use docker. Docker image definitions with installed eli
 
 If images are not yet available publicly in docker hub, they can be easily built locally:
 
-    git clone git@github.com:alertlogic/erllambda_docker.git
+    git clone https://github.com/alertlogic/erllambda_docker.git
     docker build -t erllambda:20.3 erllambda_docker/20
     docker build -t erllambda:20.3-elixir erllambda_docker/elixir
 

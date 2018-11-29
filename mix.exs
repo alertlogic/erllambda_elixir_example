@@ -19,8 +19,8 @@ defmodule ErllambdaElixirExample.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:erllambda, git: "git@github.com:alertlogic/erllambda.git"},
-      {:mix_erllambda, git: "git@github.com:alertlogic/mix_erllambda.git"},
+      {:erllambda, git: "https://github.com/alertlogic/erllambda.git"},
+      {:mix_erllambda, git: "https://github.com/alertlogic/mix_erllambda.git"},
       {:jiffy, "~> 0.15.2"}
     ]
   end
