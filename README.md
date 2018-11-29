@@ -62,7 +62,7 @@ Once stack is successfully deployed it creates a publicly available API Gateway 
 
     aws cloudformation describe-stacks \
         --stack-name erllambda-elixir-example \
-            | jq -r .Stacks[].Outputs[].OutputValue
+        --query 'Stacks[].Outputs'
 
 This should return URL similar to `https://fkwbu2l29x2.execute-api.us-east-1.amazonaws.com/Prod/MyResource/`
 
