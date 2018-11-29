@@ -87,3 +87,10 @@ This should return URL similar to `https://fkwbu2l29x2.execute-api.us-east-1.ama
 
     http delete https://fkwbu2l29x2.execute-api.us-east-1.amazonaws.com/Prod/MyResource \
         id==foo
+
+
+### Delete stack
+
+When you do not need stack anymore you can delete it using the following command:
+
+    aws cloudformation delete-stack --stack-name erllambda-elixir-example
