@@ -20,7 +20,7 @@ defmodule ErllambdaElixirExample.MixProject do
   defp deps do
     [
       {:erllambda, "~> 2.0"},
-      {:mix_erllambda, "~> 1.0"},
+      {:mix_erllambda, "~> 1.1"},
       {:jiffy, "~> 0.15.2"}
     ]
   end
